@@ -57,6 +57,7 @@ const Login = () => {
   };
 
   return (
+    <div className="login-wrapper">
     <div className={isActive ? "container active" : "container"} id="container">
       {/* Sign Up Form */}
 <div className="form-container sign-up">
@@ -155,6 +156,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
