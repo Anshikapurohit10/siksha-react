@@ -21,7 +21,11 @@ export default function StudentDashboard() {
       <div className="center-section">
         <div className="welcome-card">
           <div>
+<<<<<<< HEAD
             <h2>Hello Anshika!</h2>
+=======
+            <h2>Hello Robin!</h2>
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
             <p>
               You have <b>1 new work</b>. You have to finish it by tomorrow.{" "}
               <span className="link">View</span>

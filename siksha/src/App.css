@@ -47,6 +47,7 @@ background: url("/src/assets/top-view-circular-frame-with-supplies.jpg") no-repe
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
 }.auth-bg::before {
   content: "";
   position: absolute;
@@ -58,4 +59,6 @@ background: url("/src/assets/top-view-circular-frame-with-supplies.jpg") no-repe
 .auth-bg > * {
   position: relative;
   z-index: 1; /* form card upar rahe overlay ke */
+=======
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
 }

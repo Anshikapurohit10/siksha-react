@@ -24,9 +24,15 @@
 /* Logo */
 .logo img {
   
+<<<<<<< HEAD
  height: 54px;
   width: 54px;
   border-radius: 90%;
+=======
+ height: 44px;
+  width: 44px;
+  border-radius: 50%;
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
   object-fit: cover;
   border: 2px solid #eee;
 

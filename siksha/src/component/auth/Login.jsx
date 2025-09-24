@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import API from "./api";
 const Login = () => {
   const [isActive, setIsActive] = useState(false);
@@ -68,10 +69,71 @@ const handleLogin = async (e) => {
     <div className={isActive ? "container active" : "container"} id="container">
              {/* Sign Up Form */}
 
+=======
+
+const Login = () => {
+  const [isActive, setIsActive] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState("student"); // 👈 role ka state
+  const navigate = useNavigate();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    const storedUser = JSON.parse(localStorage.getItem("registeredUser"));
+
+    if (!storedUser) {
+      alert("No user found. Please Sign Up first!");
+      navigate("/register");
+      return;
+    }
+
+    if (
+      email === storedUser.email &&
+      password === storedUser.password &&
+      role === storedUser.role // 👈 role bhi check karna
+    ) {
+      alert("Login Successful!");
+
+      if (storedUser.role === "student") navigate("/student");
+      else if (storedUser.role === "teacher") navigate("/teacher");
+      else navigate("/admin");
+    } else {
+      alert("Invalid Email, Password, or Role");
+    }      
+
+    setEmail("");
+    setPassword("");
+  };
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+
+    if (email && password) {
+      // localStorage me save karo
+      localStorage.setItem(
+        "tempSignup",
+        JSON.stringify({ email, password, role })
+      );
+
+      alert("Account Created! Now complete your registration.");
+      navigate("/register"); // Registration page pe bhejna
+    } else {
+      alert("Please enter email and password");
+    }
+  };
+
+  return (
+    <div className="login-wrapper">
+    <div className={isActive ? "container active" : "container"} id="container">
+      {/* Sign Up Form */}
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
 <div className="form-container sign-up">
         <form onSubmit={handleSignup}>
           <h1>Create Account</h1>
           <input
+<<<<<<< HEAD
             type="text"
             value={name }
             onChange={(e) => setName(e.target.value)}
@@ -79,6 +141,8 @@ const handleLogin = async (e) => {
             required
           />
           <input
+=======
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -92,6 +156,7 @@ const handleLogin = async (e) => {
             placeholder="Password"
             required
           />
+<<<<<<< HEAD
           <div className="role-container">
               {["student", "teacher"].map((r) => (
                 <label key={r} className={`role-option ${role === r ? "selected" : ""}`}>
@@ -124,15 +189,36 @@ const handleLogin = async (e) => {
            {/* <div className="divider">OR</div> */}
 
     {/* Google Sign-In Button
+=======
+          {/* 👇 Role selection dropdown
+          <select value={role} onChange={(e) => setRole(e.target.value)}>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+            <option value="admin">Admin</option>
+          </select> */}
+
+          <button type="submit">Next → Registration</button>
+           <div className="divider">OR</div>
+
+    {/* Google Sign-In Button */}
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
      <button type="button" className="google-btn"> 
       Sign Up with Google
     </button>
         </form>
+<<<<<<< HEAD
       </div> */}
 
       {/* Sign In Form */}
       <div className="form-container sign-in">
         <form onSubmit={handleLogin}>
+=======
+      </div>
+
+      {/* Sign In Form */}
+      <div className="form-container sign-in">
+        <form onSubmit={submitHandler}>
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
           <h1>Sign In</h1>
           <input
             type="email"
@@ -167,6 +253,7 @@ const handleLogin = async (e) => {
           <p class="forgot-password">
     <a href="/forgot-password">Forgot your password?</a>
   </p>
+<<<<<<< HEAD
 <button type="submit" disabled={loading}>
               {loading ? "Signing In..." : "Sign In"}
             </button>
@@ -176,6 +263,13 @@ const handleLogin = async (e) => {
         </form>
         
       </div> */}
+=======
+
+          <button type="submit">Sign In</button>
+        </form>
+        
+      </div>
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
 
       {/* Toggle Section */}
       <div className="toggle-container">
@@ -198,8 +292,141 @@ const handleLogin = async (e) => {
       </div>
     </div>
     </div>
+<<<<<<< HEAD
     
+=======
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
   );
 };
 
 export default Login;
+<<<<<<< HEAD
+=======
+// import React, { useState } from "react";
+// import "./Login.css";
+// import { useNavigate } from "react-router-dom";
+// const [role, setRole] = useState("student");
+
+
+// const Login = () => {
+//   const [isActive, setIsActive] = useState(false);
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
+//   const navigate = useNavigate();
+
+//   const submitHandler = (e) => {
+//     e.preventDefault();
+
+//     const storedUser = JSON.parse(localStorage.getItem("registeredUser"));
+
+//     if (!storedUser) {
+//       alert("No user found. Please Sign Up first!");
+//       navigate("/register");
+//       return;
+//     }
+
+//     if (email === storedUser.email && password === storedUser.password) {
+//       alert("Login Successful!");
+
+//       if (storedUser.role === "student") navigate("/student");
+//       else if (storedUser.role === "teacher") navigate("/teacher");
+//       else navigate("/admin");
+//     } else {
+//       alert("Invalid Email or Password");
+//     }
+
+//     setEmail("");
+//     setPassword("");
+//   }; const handleSignup = (e) => {
+//     e.preventDefault();
+
+//    if (email && password) {
+//     // localStorage me save karo
+//     localStorage.setItem(
+//       "tempSignIn",
+//       JSON.stringify({ email, password })
+//     );
+
+//     alert("Account Created! Now complete your registration.");
+//     navigate("/register"); // Registration page pe bhejna
+//   } else {
+//     alert("Please enter email and password");
+//   }
+
+
+//     // temporary save in localStorage (to use in registration)
+//     localStorage.setItem("tempSignup", JSON.stringify({ email, password }));
+
+//     navigate("/register"); // 👈 Ab registration form pe le jayega
+//   };
+
+
+//   return (
+//     <div className={isActive ? "container active" : "container"} id="container">
+//       {/* Sign Up Form */}
+//       <div className="form-container sign-up">
+//         <form onSubmit={handleSignup}>
+//           <h1>Create Account</h1>
+//           <input
+//             type="email"
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//             placeholder="Email"
+//             required
+//           />
+//           <input
+//             type="password"
+//             value={password}
+//             onChange={(e) => setPassword(e.target.value)}
+//             placeholder="Password"
+//             required
+//           />
+//           <button type="submit">Next → Registration</button>
+//         </form>
+//       </div>
+//       {/* <div className="form-container sign-up">
+//         <form onSubmit={(e) => { e.preventDefault(); navigate("/register"); }}>
+//           <h1>Create Account</h1>
+//           <div className="social-icons">
+//             <a href="#" className="google-login">Login with Google </a>
+//           </div>
+//           <input type="text" placeholder="Name" disabled />
+//           <input type="email" placeholder="Email" disabled />
+//           <input type="password" placeholder="Password" disabled />
+//           <button type="submit">Sign Up</button>
+//         </form>
+//       </div> */}
+
+//       {/* Sign In Form */}
+//       <div className="form-container sign-in">
+//         <form onSubmit={submitHandler}>
+//           <h1>Sign In</h1>
+//           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
+//           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
+//           <a href="#">Forget Your Password?</a>
+//           <button type="submit">Sign In</button>
+//         </form>
+//       </div>
+
+//       {/* Toggle Section */}
+//       <div className="toggle-container">
+//         <div className="toggle">
+//           <div className="toggle-panel toggle-left">
+//             <h1>Welcome Back!</h1>
+//             <p>Provide your details to unlock all features of our site.</p>
+//             <button className="hidden" onClick={() => setIsActive(false)}>Sign In</button>
+//           </div>
+//           <div className="toggle-panel toggle-right">
+//             <h1>Hello, Students!</h1>
+//             <p>Let’s get you started!</p>
+//             <button className="hidden" onClick={() => setIsActive(true)}>Sign Up</button>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Login;
+
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef

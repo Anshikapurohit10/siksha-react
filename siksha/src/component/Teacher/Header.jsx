@@ -21,7 +21,11 @@ export default function Header() {
   <div className="left-section">
     <div className="logo">
       <img 
+<<<<<<< HEAD
         src="/src/assets/WhatsApp Image 2025-09-22 at 12.50.31 PM.jpeg"   
+=======
+        src="/src/assets/IMG_20250919_140632.jpg"   
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
         alt="Logo"
       />
     </div>

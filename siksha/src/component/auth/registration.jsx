@@ -1,27 +1,42 @@
 import React, { useState , useEffect }  from "react";
 import "./Registration.css";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import axios from "axios";
+=======
+
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
 
 
   const Registration = () => {
   const [formData, setFormData] = useState({
     role: "student",
     name: "",
+<<<<<<< HEAD
     collegeName:"",
     collegeId: "",
+=======
+    collegeID: "",
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
     course: "",
     semester: "",
     email: "",
     phone: "",
      password: "",
+<<<<<<< HEAD
      rollNumber:"",
+=======
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
   });
 
   const navigate = useNavigate();
   useEffect(() => {
     const tempData = JSON.parse(localStorage.getItem("tempSignIn"));
+<<<<<<< HEAD
     if (tempData?.email && tempData?.password) {
+=======
+    if (tempData) {
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
       setFormData((prev) => ({
         ...prev,
         email: tempData.email,
@@ -34,6 +49,7 @@ import axios from "axios";
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+<<<<<<< HEAD
 console.log('Sending to /api/auth/register:', {
     name: formData.name,
     email: formData.email,
@@ -90,18 +106,38 @@ const token = localStorage.getItem("tresetu_token");
    else if (formData.role === "admin") {
         navigate("/admin");
       }
+=======
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Save user in localStorage
+    localStorage.setItem("registeredUser", JSON.stringify(formData));
+    // localStorage.setItem("teacherName", "Prof. Sharma"); // replace with real name from backend
+
+    alert(`Registered successfully as ${formData.role.toUpperCase()}`);
+
+    if (formData.role === "student") navigate("/student");
+    else if (formData.role === "teacher") navigate("/teacher");
+    else navigate("/admin");
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
 
     // Reset form
     setFormData({
       role: "student",
       name: "",
+<<<<<<< HEAD
       collegeId: "",
       collegeName: "",
+=======
+      collegeID: "",
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
       course: "",
       semester: "",
       email: "",
       phone: "",
       password: "",
+<<<<<<< HEAD
       rollNumber:"",
     });
     } catch (err) {
@@ -112,6 +148,12 @@ const token = localStorage.getItem("tresetu_token");
   
   return (
      
+=======
+    });
+  };
+
+  return (
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
     <div className="register-container">
       <form className="register-form" onSubmit={handleSubmit}>
       <h1>On Board</h1>
@@ -130,6 +172,7 @@ const token = localStorage.getItem("tresetu_token");
         onChange={handleChange} 
         required 
       />
+<<<<<<< HEAD
        <input 
         type="text" 
         name="collegeName" 
@@ -152,6 +195,14 @@ const token = localStorage.getItem("tresetu_token");
         name="rollNumber" 
         placeholder="Enter your rollNumber" 
         value={formData.rollNumber} 
+=======
+
+      <input 
+        type="text" 
+        name="collegeID" 
+        placeholder="Enter your College ID" 
+        value={formData.collegeID} 
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
         onChange={handleChange} 
         required 
       />
@@ -205,11 +256,15 @@ const token = localStorage.getItem("tresetu_token");
     </form>
      
     </div>
+<<<<<<< HEAD
   
+=======
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
   );
 };
 
 export default Registration;
+<<<<<<< HEAD
 // import React, { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
 // import { useAuth } from "../../context/AuthContext";
@@ -274,3 +329,6 @@ export default Registration;
 // };
 
 // export default Registration;
+=======
+
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef

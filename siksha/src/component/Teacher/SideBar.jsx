@@ -20,11 +20,16 @@ const Sidebar = () => {
          {userRole === "student" && (
     <>
       <li>
+<<<<<<< HEAD
         <NavLink to="/student">
+=======
+        <NavLink to="/Dashboard">
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
           <FaBook className="icon" /> <span>Dashboard</span>
         </NavLink>
       </li>
       <li>
+<<<<<<< HEAD
         <NavLink to="/newactivity">
           <FaCheckCircle className="icon" /> <span>Upload Activity</span>
         </NavLink>
@@ -35,6 +40,8 @@ const Sidebar = () => {
         </NavLink>
       </li>
       <li>
+=======
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
               <NavLink to="/result">
                 <FaFileAlt className="icon" /> <span>Result</span>
               </NavLink>
@@ -59,11 +66,21 @@ const Sidebar = () => {
           <FaCog className="icon" /> <span>Setting</span>
         </NavLink>
       </li>
+<<<<<<< HEAD
       
+=======
+      <li>
+        <NavLink to="/activity">
+          <FaCheckCircle className="icon" /> <span>New Activity</span>
+        </NavLink>
+      </li>
+       
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
     </>
   )}
   {userRole === "teacher" && (
     <>
+<<<<<<< HEAD
     <li>
         <NavLink to="/teacher">
           <FaBook className="icon" /> <span>Dashboard</span>
@@ -80,6 +97,8 @@ const Sidebar = () => {
             <FaCheckCircle className="icon" /> <span>Verify Activity</span>
           </NavLink>
         </li>
+=======
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
         <li>
           <NavLink to="/assignment">
             <FaBook className="icon" /> <span>Assignment</span>
@@ -100,10 +119,16 @@ const Sidebar = () => {
             <FaCog className="icon" /> <span>Setting</span>
           </NavLink>
         </li>
+<<<<<<< HEAD
        
         <li>
           <NavLink to="/profileV">
             <FaCheckCircle className="icon" /> <span>profile verification</span>
+=======
+        <li>
+          <NavLink to="/verify">
+            <FaCheckCircle className="icon" /> <span>Verify Activity</span>
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
           </NavLink>
         </li>
         

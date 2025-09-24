@@ -1,7 +1,10 @@
 
 import { useState, useEffect } from "react";
 import "./teacher.css";
+<<<<<<< HEAD
 import axios from "axios";
+=======
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
 import {
   PieChart,
   Pie,
@@ -17,6 +20,7 @@ import {
 
 export default function TeacherDashboard() {
   const [pendingRequests, setPendingRequests] = useState([]);
+<<<<<<< HEAD
 const [teacherName, setTeacherName] = useState("");
   useEffect(() => {
      axios.get("http://localhost:5000/api/profile/me", { withCredentials: true })
@@ -25,6 +29,10 @@ const [teacherName, setTeacherName] = useState("");
       })
       .catch((err) => console.error(err));
 
+=======
+
+  useEffect(() => {
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
     setPendingRequests([
       { id: 1, student: "Rahul", course: "CS", semester: "5th" },
       { id: 2, student: "Anita", course: "IT", semester: "8rd" },
@@ -57,11 +65,23 @@ const [teacherName, setTeacherName] = useState("");
       <div className="main-content">
         {/* LEFT SECTION */}
         <div className="left-panel">
+<<<<<<< HEAD
         
           <div className="card greeting">
   <div className="greeting-content">
     <div className="text">
       <h2>Hello Krishna {teacherName} !</h2>
+=======
+          {/* Greeting */}
+          {/* <div className="card greeting">
+            <h2>Hello Kitty!</h2>
+            <p>You have <strong>5 new tasks</strong>. Let’s start the work..</p>
+          </div> */}
+          <div className="card greeting">
+  <div className="greeting-content">
+    <div className="text">
+      <h2>Hello Kitty!</h2>
+>>>>>>> cb75f395594eb5ac4f5e63f2cfd951eb7bb215ef
       <p>You have <strong>5 new tasks</strong>. Let’s start the work..</p>
     </div>
     <div className="image">
